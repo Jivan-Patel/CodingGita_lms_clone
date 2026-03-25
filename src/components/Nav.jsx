@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { getInitials } from '../utils/getinitials.js'
+import { getInitials }  from '../utils/getinitials.js'
 import { ChevronDown } from 'lucide-react'
 
 

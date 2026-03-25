@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, Settings } from "lucide-react";
 import { getInitials } from "../utils/getInitials";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -9,6 +10,20 @@ export default function Navbar() {
     const user = data ? JSON.parse(data) : null;
 
     const initials = getInitials(user?.name);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const isActive = (path) => {
+        return location.pathname === path
+            ? "px-3 py-2 rounded-md text-sm font-medium bg-neutral-800 text-white cursor-pointer"
+            : "px-3 py-2 text-sm text-neutral-300 hover:bg-neutral-800 rounded cursor-pointer";
+    };
+
+    function logout() {
+        localStorage.removeItem("user");
+        navigate("/login");
+    }
 
     return (
         <header className="fixed top-0 inset-x-0 z-50 border-b border-neutral-800 bg-neutral-900/80 backdrop-blur supports-backdrop-filter:bg-neutral-900/60">
@@ -25,19 +40,19 @@ export default function Navbar() {
 
                     {/* DESKTOP MENU */}
                     <nav className="hidden md:flex items-center gap-1 ml-2">
-                        <div className="px-3 py-2 rounded-md text-sm font-medium bg-neutral-800 text-white">
+                        <div className={isActive('/student')} onClick={() => navigate("/student")}>
                             Dashboard
                         </div>
 
-                        <div className="px-3 py-2 text-sm text-neutral-300 hover:bg-neutral-800 rounded">
+                        <div className={isActive('/student/attendance')} onClick={() => navigate("/student/attendance")}>
                             Attendance
                         </div>
 
-                        <div className="px-3 py-2 text-sm text-neutral-300 hover:bg-neutral-800 rounded">
+                        <div className={isActive('/student/calendar')} onClick={() => navigate("/student/calendar")}>
                             Calendar
                         </div>
 
-                        <div className="px-3 py-2 text-sm text-neutral-300 hover:bg-neutral-800 rounded">
+                        <div className={isActive('/student/chat-groups')} onClick={() => navigate("/student/chat-groups")}>
                             Chat
                         </div>
 
@@ -49,19 +64,19 @@ export default function Navbar() {
 
                             <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150 absolute left-0 mt-2 w-48 rounded-lg border border-neutral-800 bg-neutral-900 shadow-xl">
                                 <div className="p-2 space-y-1">
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
                                         Semester Attendance
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
                                         Feedback
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
                                         Weekly Subject Feedback
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
                                         Apply Leave
                                     </div>
                                 </div>
@@ -107,7 +122,7 @@ export default function Navbar() {
                                     View Profile
                                 </div>
 
-                                <div className="w-full text-left text-sm px-3 py-2 rounded-md text-neutral-200 hover:bg-neutral-800 cursor-pointer">
+                                <div className="w-full text-left text-sm px-3 py-2 rounded-md text-neutral-200 hover:bg-neutral-800 cursor-pointer" onClick={logout}>
                                     Logout
                                 </div>
                             </div>
@@ -162,7 +177,9 @@ export default function Navbar() {
                             View Profile
                         </div>
 
-                        <div className="px-3 py-2 hover:bg-neutral-800 rounded">Logout</div>
+                        <div className="px-3 py-2 hover:bg-neutral-800 rounded" onClick={logout}>
+                            Logout
+                        </div>
                     </div>
                 </div>
             )}

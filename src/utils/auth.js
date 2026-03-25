@@ -43,16 +43,35 @@ export const loginCredentials = {
     assignments: 0,
     pendingAssignments: 0,
     events: [],
+
+    todaysAttendance: [
+        {
+            subject: "SU0204 - OOPS(C++)",
+            markedBy: "Ankita",
+            status: "present"
+        },
+        {
+            subject: "SU0201 - ReactJS",
+            markedBy: "Ankita",
+            status: "present"
+        },
+        {
+            subject: "SU0202 - NodeJS",
+            markedBy: "Ankita",
+            status: "present"
+        },
+        {
+            subject: "SU0203 - NoSQL Database(MongoDB/Redis)",
+            markedBy: "Ankita",
+            status: "present"
+        },
+    ]
 }
 
 export const loginDetails = (uid, password) => {
     if (uid === loginCredentials.uid && password === loginCredentials.password) {
-        const user = {
-            uid,
-            role: "Students",
-            name: "Patel Jivan"
-        }
-        localStorage.setItem("user", JSON.stringify(user));
+        
+        localStorage.setItem("user", JSON.stringify(loginCredentials));
         return true;
     }
     return false;
