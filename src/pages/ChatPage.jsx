@@ -10,8 +10,8 @@ function ChatPage() {
                     <h1 className="text-3xl font-bold mb-1">Chat Groups</h1>
                     <p className="text-neutral-400 text-sm">Groups assigned to you and universal groups.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div className="text-neutral-400">No groups assigned to you yet.</div>
+                <div className='text-neutral-400'>
+                    No groups assigned to you yet.
                 </div>
             </div>
         </div>
