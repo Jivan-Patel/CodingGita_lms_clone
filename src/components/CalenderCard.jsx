@@ -14,7 +14,7 @@ const LEGEND_ITEMS = [
     { color: 'bg-cyan-500', label: 'Hackathon participation' },
     {
         color: 'bg-blue-500',
-        label: 'College events (seminars, workshops, competitions, etc.)',
+        label: 'College events (seminars, workshops, etc.)',
     },
     { color: 'bg-red-500', label: 'Sick leave / medical reasons' },
     { color: 'bg-green-500', label: 'Placement drives' },
