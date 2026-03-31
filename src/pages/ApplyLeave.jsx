@@ -53,7 +53,7 @@ function ApplyLeave() {
                 {/* Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-neutral-100">4</div>
+                        <div className="text-2xl font-bold text-neutral-100">{leaveData.length}</div>
                         <div className="text-sm text-neutral-400">Total Applications</div>
                     </div>
                     <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
@@ -61,7 +61,7 @@ function ApplyLeave() {
                         <div className="text-sm text-neutral-400">Pending Review</div>
                     </div>
                     <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-emerald-300">4</div>
+                        <div className="text-2xl font-bold text-emerald-300">{leaveData.length}</div>
                         <div className="text-sm text-neutral-400">Approved</div>
                     </div>
                     <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
