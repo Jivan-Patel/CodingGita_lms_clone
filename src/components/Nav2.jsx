@@ -63,20 +63,20 @@ export default function Navbar() {
                             </button>
 
                             <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150 absolute left-0 mt-2 w-48 rounded-lg border border-neutral-800 bg-neutral-900 shadow-xl">
-                                <div className="p-2 space-y-1">
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
+                                <div className="p-2 space-y-1 text-start">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer"  onClick={() => navigate("/student/semester-attendance")}>
                                         Semester Attendance
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer" onClick={() => navigate("/student/feedback")}>
                                         Feedback
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer" onClick={() => navigate("/student/weekly-subject-feedback")}>
                                         Weekly Subject Feedback
                                     </div>
 
-                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer">
+                                    <div className="px-3 py-2 text-sm hover:bg-neutral-800 rounded cursor-pointer" onClick={() => navigate("/student/apply-leave")}>
                                         Apply Leave
                                     </div>
                                 </div>
