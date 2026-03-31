@@ -7,6 +7,7 @@ import AttendancePage from './pages/AttendancePage.jsx';
 import ChatPage from './pages/ChatPage.jsx';
 import CalenderPage from './pages/CalenderPage.jsx';
 import ApplyLeave from './pages/ApplyLeave.jsx';
+import WeeklyFeedback from './pages/WeeklyFeedback.jsx';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/student/chat-groups' element={<ChatPage />} />
         <Route path='/student/calendar' element={<CalenderPage />} />
         <Route path='/student/apply-leave' element={<ApplyLeave />} />
+        <Route path='/student/weekly-subject-feedback' element={<WeeklyFeedback />} />
       </Routes>
     </>
   )
