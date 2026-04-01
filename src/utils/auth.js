@@ -2,8 +2,21 @@ export const loginCredentials = {
     uid: "108796",
     password: "123456",
     name: "Patel Jivan",
-    email: "patel.jivan.cg@gmail.com",
+    mobile: "+91 7016749807",
+    email: "ptl.jivan07@gmail.com",
+    alternativeEmail: "patel.jivan.cg@gmail.com",
     university: "SUxCG 714",
+    enrollmentNumber: "SUK250054CE107",
+    branch: "SUxCG",
+    semester: "Semester 2",
+    gender: "Male",
+    address: "360, Naranpar Pasayati, Bhuj, Kutch, Gujarat, India - 370001",
+
+    portfolio: "https://patel-jivan.xyz",
+    github: "https://github.com/Jivan-Patel/",
+    linkedin: "https://www.linkedin.com/in/patel-jivan/",
+    twitter: "https://x.com/JivanPatel76913",
+    youtube: "https://www.youtube.com/@PatelJivan-07",
 
     image: "https://res.cloudinary.com/dkohpqbdj/image/upload/v1770271335/profile_nbhijj.jpg",
 
@@ -70,7 +83,7 @@ export const loginCredentials = {
 
 export const loginDetails = (uid, password) => {
     if (uid === loginCredentials.uid && password === loginCredentials.password) {
-        
+
         localStorage.setItem("user", JSON.stringify(loginCredentials));
         return true;
     }

@@ -118,7 +118,7 @@ export default function Navbar() {
 
                             {/* MENU */}
                             <div className="p-2">
-                                <div className="w-full text-left text-sm px-3 py-2 rounded-md text-neutral-200 hover:bg-neutral-800 cursor-pointer">
+                                <div className="w-full text-left text-sm px-3 py-2 rounded-md text-neutral-200 hover:bg-neutral-800 cursor-pointer" onClick={() => navigate("/student/profile")}>
                                     View Profile
                                 </div>
 
