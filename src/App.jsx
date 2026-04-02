@@ -9,6 +9,7 @@ import CalenderPage from './pages/CalenderPage.jsx';
 import ApplyLeave from './pages/ApplyLeave.jsx';
 import WeeklyFeedback from './pages/WeeklyFeedback.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import FeedbackPage from './pages/feedbackPage.jsx';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/student/apply-leave' element={<ApplyLeave />} />
         <Route path='/student/weekly-subject-feedback' element={<WeeklyFeedback />} />
         <Route path='/student/profile' element={<ProfilePage />} />
+        <Route path='/student/feedback' element={<FeedbackPage />} />
       </Routes>
     </>
   )
